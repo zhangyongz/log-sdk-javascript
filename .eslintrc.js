@@ -1,13 +1,27 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  parser: '@typescript-eslint/parser', // 使用 ts 解析器
+  extends: [
+    'eslint:recommended', // eslint 推荐规则
+    'plugin:@typescript-eslint/recommended', // ts 推荐规则
+  ],
+  plugins: [
+    '@typescript-eslint',
+  ],
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  parserOptions: {
+    // project: './tsconfig.eslint.json',
+    ecmaVersion: 2019,
+    sourceType: 'module',
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true
+    }
+  },
   rules: {
-    // 禁止使用 var
-    'no-var': "error",
-    // 优先使用 interface 而不是 type
-    '@typescript-eslint/consistent-type-definitions': [
-      "error",
-      "interface"
-    ]
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }

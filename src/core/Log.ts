@@ -1,7 +1,7 @@
 export default class Log {
-  request(url: string, callback: any) {
+  request(url: string, callback: any): void {
     try {
-      let req = new XMLHttpRequest();
+      const req = new XMLHttpRequest();
       req.open('GET', url, true);
       // send the mp_optout cookie
       // withCredentials cannot be modified until after calling .open on Android and Mobile Safari
@@ -13,7 +13,7 @@ export default class Log {
               callback(req.responseText);
             }
           } else {
-            let error = 'Bad HTTP status: ' + req.status + ' ' + req.statusText;
+            const error = 'Bad HTTP status: ' + req.status + ' ' + req.statusText;
             console.error(error);
             if (callback) {
               callback({ status: 0, error: error });
