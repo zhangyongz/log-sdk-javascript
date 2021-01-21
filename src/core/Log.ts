@@ -1,5 +1,10 @@
+import { baseUrl } from '../const'
+
 export default class Log {
-  request(url: string, callback: any): void {
+  track  (event_name: string, data: any, callback: any) {
+    this.request(baseUrl, callback)
+  }
+  request(url:string, callback: any): void {
     try {
       const req = new XMLHttpRequest();
       req.open('GET', url, true);
