@@ -1,7 +1,7 @@
 import Log from '../src/index'
 
-let log = new Log()
+const log = new Log()
 
-log.track('login', {}, (data: any) => {
-  console.log(data)
+log.track('login', ['a', 1], (res: any) => {
+  console.log(JSON.parse(res))
 })

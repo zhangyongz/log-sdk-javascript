@@ -1,8 +1,13 @@
 import { baseUrl } from '../const'
+import { buildURL } from '../helpers/url'
 
 export default class Log {
-  track  (event_name: string, data: any, callback: any) {
-    this.request(baseUrl, callback)
+  track  (event_name: string, params: any, callback: any): void {
+    const url = buildURL(baseUrl + '/track', {
+      event_name,
+      params
+    })
+    this.request(url, callback)
   }
   request(url:string, callback: any): void {
     try {
