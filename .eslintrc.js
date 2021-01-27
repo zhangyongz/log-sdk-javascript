@@ -1,11 +1,11 @@
 module.exports = {
+  plugins: [
+    '@typescript-eslint',
+  ],
   parser: '@typescript-eslint/parser', // 使用 ts 解析器
   extends: [
     'eslint:recommended', // eslint 推荐规则
-    'plugin:@typescript-eslint/recommended', // ts 推荐规则
-  ],
-  plugins: [
-    '@typescript-eslint',
+    // 'plugin:@typescript-eslint/recommended', // ts 推荐规则
   ],
   env: {
     browser: true,
