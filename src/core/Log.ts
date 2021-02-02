@@ -2,16 +2,15 @@ import { baseUrl } from '../const'
 import { buildURL } from '../helpers/url'
 
 export default class Log {
-  // token: string;
+  token: string;
   constructor (token: string) {
-    if (token) {
-      // this.token = token
-    }
+    this.token = token
   }
-  track  (event_name: string, params: any, callback: any): void {
+  track(event_name: string, params: any, callback: any): void {
     const url = buildURL(baseUrl + '/track', {
       event_name,
-      params
+      params,
+      token: this.token
     })
     this.request(url, callback)
   }

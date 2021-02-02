@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     '@typescript-eslint',
+    'html'
   ],
   parser: '@typescript-eslint/parser', // 使用 ts 解析器
   extends: [
