@@ -25,7 +25,7 @@ export function buildURL(
     if (val == null) {
       return;
     }
-    let values = [];
+    let values: any[] = [];
     if (Array.isArray(val)) {
       values = val;
       key += '[]';
@@ -42,7 +42,7 @@ export function buildURL(
     });
   });
 
-  let serializedParams = parts.join('&');
+  const serializedParams = parts.join('&');
 
   if (serializedParams) {
     const markIndex = url.indexOf('#');

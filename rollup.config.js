@@ -5,11 +5,11 @@ import pkg from './package.json'
 export default {
   input: 'src/index.ts',
   output: [
-    { file: pkg.main, name: 'log', format: "umd", sourcemap: true },
+    { file: pkg.main, name: 'Log', format: "umd", sourcemap: true },
     { file: pkg.module, format: "es", sourcemap: true }
   ],
   plugins: [
     json(),
-    typescript()
+    typescript({useTsconfigDeclarationDir: true})
   ]
 };
