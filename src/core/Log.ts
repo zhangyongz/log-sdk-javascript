@@ -31,7 +31,7 @@ export default class Log {
             const error = 'Bad HTTP status: ' + req.status + ' ' + req.statusText;
             console.error(error);
             if (callback) {
-              callback({ status, error: error });
+              callback({ status: req.status, error: error });
             }
           }
         }
